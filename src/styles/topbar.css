@@ -1,0 +1,62 @@
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.topbar-inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.topbar .brand{
+    font-weight:700;
+    letter-spacing:.2px;
+    color:rgba(255,255,255,.92);
+}
+
+.topbar .links{
+    display:flex;
+    gap:18px;
+}
+
+.topbar .links a{
+    color:rgba(255,255,255,.70);
+    text-decoration:none;
+    font-size:18px;
+}
+
+.topbar .links a:hover{
+    color:rgba(255,255,255,.92);
+}
+
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    text-decoration:none;
+}
+
+.brand-logo{
+    width:44px;
+    height:44px;
+    display:block;
+    filter: brightness(0) invert(1);
+}
+
+
+.brand-text{
+    font-weight:700;
+    color:rgba(255,255,255,.92);
+    font-size:26px;
+
+}

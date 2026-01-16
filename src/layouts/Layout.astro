@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css"
+import "../styles/topbar.css"
+
+import TopBar from "../components/TopBar.astro"
 ---
+
+
 
 <!doctype html>
 <html lang="es">
@@ -11,6 +16,8 @@ import "../styles/global.css"
 	<title>MadnessMad</title>
 </head>
 <body>
+<TopBar />
+
 <div class="page">
 	<slot />
 </div>
