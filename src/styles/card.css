@@ -1,0 +1,51 @@
+.card{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.28);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-radius:14px;
+    padding:16px;
+    transition:transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    opacity:0;
+    transition:opacity .12s ease;
+    pointer-events:none;
+    background:radial-gradient(520px 260px at var(--mx, 50%) var(--my, 50%), rgba(0, 139, 255, 0.22), transparent 60%);
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(255,255,255,.18);
+    background:rgba(0,0,0,.34);
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card > *{
+    position:relative;
+    z-index:1;
+}
+
+.card-title{
+    font-weight:700;
+    color:rgba(255,255,255,.88);
+    margin-bottom:6px;
+}
+
+.card-text{
+    color:rgba(255,255,255,.65);
+    line-height:1.55;
+    font-size:14px;
+}
+
+
+

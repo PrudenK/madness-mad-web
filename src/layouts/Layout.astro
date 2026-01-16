@@ -2,6 +2,7 @@
 import "../styles/global.css"
 import "../styles/topbar.css"
 import "../styles/mainContent.css"
+import "../styles/card.css"
 
 import TopBar from "../components/TopBar.astro"
 import MainContent from "../components/MainContent.astro"
@@ -17,6 +18,24 @@ import Footer from "../components/Footer.astro";
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="image/svg+xml" href="/logo_mm_sin_fondo.png" />
 	<title>MadnessMad</title>
+
+	<script is:inline>
+		window.addEventListener('DOMContentLoaded', () => {
+			document.querySelectorAll('.card').forEach((card) => {
+				const set = (e) => {
+					const r = card.getBoundingClientRect()
+					const x = ((e.clientX - r.left) / r.width) * 100
+					const y = ((e.clientY - r.top) / r.height) * 100
+					card.style.setProperty('--mx', x + '%')
+					card.style.setProperty('--my', y + '%')
+				}
+				card.addEventListener('mousemove', set)
+				card.addEventListener('mouseenter', set)
+			})
+		})
+	</script>
+
+
 </head>
 <body>
 
