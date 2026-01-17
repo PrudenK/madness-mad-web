@@ -1,0 +1,295 @@
+<section class="doc-hero">
+    <div class="doc-hero-inner">
+        <h1 class="doc-h1">Documentación</h1>
+        <p class="doc-lead">
+            Guía de uso de MadnessMad: interfaz, controles, algoritmos, métricas, matrices e import/export.
+        </p>
+    </div>
+</section>
+
+<div class="doc-shell">
+    <aside class="doc-toc">
+        <div class="doc-toc-card">
+            <div class="doc-toc-title">Contenido</div>
+            <nav class="doc-toc-nav">
+                <a href="#intro">Introducción</a>
+                <a href="#ui">Interfaz</a>
+                <a class="doc-toc-indent" href="#ui-vertices">Vértices</a>
+                <a class="doc-toc-indent" href="#ui-aristas">Aristas</a>
+                <a href="#controls">Controles del grafo</a>
+                <a class="doc-toc-indent" href="#controls-mouse">Ratón</a>
+                <a class="doc-toc-indent" href="#controls-keyboard">Teclado</a>
+                <a href="#algorithms">Algoritmos</a>
+                <a class="doc-toc-indent" href="#algorithms-list">Implementados</a>
+                <a class="doc-toc-indent" href="#algorithms-animations">Animaciones</a>
+                <a href="#social">Redes sociales</a>
+                <a href="#info">Información del grafo</a>
+                <a href="#matrices">Matrices</a>
+                <a href="#io">Archivo</a>
+            </nav>
+        </div>
+    </aside>
+
+    <article class="doc-article">
+        <section id="intro" class="doc-section">
+            <h2 class="doc-h2">Introducción</h2>
+            <p class="doc-p">
+                MadnessMad es un editor de grafos desarrollado con Kotlin y Jetpack Compose. Permite crear, visualizar y manipular grafos,
+                además de ejecutar algoritmos clásicos con soporte de animación.
+            </p>
+            <p class="doc-p">
+                Está orientado a docencia, modularidad y escalabilidad, con atajos de teclado para edición rápida.
+            </p>
+        </section>
+
+        <section id="ui" class="doc-section">
+            <h2 class="doc-h2">Interfaz</h2>
+
+            <div class="doc-callout">
+                <div class="doc-callout-title">Idea general</div>
+                <div class="doc-callout-text">Diseño minimalista con foco en edición directa del grafo y paneles de información.</div>
+            </div>
+
+            <figure class="doc-figure">
+                <img class="doc-img" src="/docs/assets/interfaz.png" alt="Interfaz" loading="lazy" />
+                <figcaption class="doc-caption">Vista general de la interfaz.</figcaption>
+            </figure>
+
+            <section id="ui-vertices" class="doc-subsection">
+                <h3 class="doc-h3">Vértices</h3>
+                <ul class="doc-ul">
+                    <li>Crear con <span class="kbd">V</span></li>
+                    <li>Renombrar con <span class="kbd">R</span> o menú contextual (click derecho)</li>
+                    <li>Cambiar color con <span class="kbd">C</span> o menú contextual</li>
+                    <li>Cambiar estilo con <span class="kbd">F</span></li>
+                    <li>Modificar tamaño con <span class="kbd">Ctrl +</span> y <span class="kbd">Ctrl -</span></li>
+                </ul>
+            </section>
+
+            <section id="ui-aristas" class="doc-subsection">
+                <h3 class="doc-h3">Aristas</h3>
+                <ul class="doc-ul">
+                    <li>Crear arrastrando desde un vértice a otro con click izquierdo</li>
+                    <li>Peso, nombre, color, curvatura, dirección y estilos son editables</li>
+                    <li>Alternar texto de arista con <span class="kbd">E</span> (nombre, peso, ambos, ninguno)</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="controls" class="doc-section">
+            <h2 class="doc-h2">Controles del grafo</h2>
+            <p class="doc-p">
+                Los atajos pueden modificarse desde <span class="doc-pill">Ajustes</span>.
+            </p>
+
+            <section id="controls-mouse" class="doc-subsection">
+                <h3 class="doc-h3">Ratón</h3>
+
+                <div class="doc-grid-2">
+                    <div class="doc-panel">
+                        <div class="doc-panel-title">Vacío</div>
+                        <ul class="doc-ul">
+                            <li><span class="kbd">CD</span> + arrastrar: mover lienzo</li>
+                            <li><span class="kbd">RR</span> + <span class="kbd">Ctrl</span>: zoom</li>
+                            <li><span class="kbd">CI</span> + <span class="kbd">Shift</span>: selección rectangular</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-panel">
+                        <div class="doc-panel-title">Elementos</div>
+                        <ul class="doc-ul">
+                            <li><span class="kbd">CI</span>: seleccionar</li>
+                            <li><span class="kbd">CI</span> + <span class="kbd">Mayús</span>: selección múltiple</li>
+                            <li><span class="kbd">CD</span>: menú contextual</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-panel">
+                        <div class="doc-panel-title">Vértices</div>
+                        <ul class="doc-ul">
+                            <li><span class="kbd">CI</span> + arrastrar: crear arista</li>
+                            <li><span class="kbd">CI</span> + <span class="kbd">Ctrl</span> + arrastrar: mover</li>
+                            <li><span class="kbd">Ctrl +</span> / <span class="kbd">Ctrl -</span>: tamaño</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-panel">
+                        <div class="doc-panel-title">Aristas y bucles</div>
+                        <ul class="doc-ul">
+                            <li><span class="kbd">CI</span> + <span class="kbd">Ctrl</span> + arrastrar (peso/medio): curvar arista</li>
+                            <li><span class="kbd">CI</span> + <span class="kbd">Ctrl</span> + arrastrar: ajustar tamaño de bucle</li>
+                            <li><span class="kbd">CI</span> + <span class="kbd">Mayús</span> + arrastrar: rotar bucle</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="doc-legend">
+                    <span class="doc-legend-item"><span class="doc-dot"></span> CD: click derecho</span>
+                    <span class="doc-legend-item"><span class="doc-dot"></span> CI: click izquierdo</span>
+                    <span class="doc-legend-item"><span class="doc-dot"></span> RR: rueda ratón</span>
+                </div>
+            </section>
+
+            <section id="controls-keyboard" class="doc-subsection">
+                <h3 class="doc-h3">Teclado</h3>
+
+                <div class="doc-table-wrap">
+                    <table class="doc-table">
+                        <thead>
+                        <tr>
+                            <th>Tecla</th>
+                            <th>Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td><span class="kbd">V</span></td><td>Agregar vértice</td></tr>
+                        <tr><td><span class="kbd">D</span></td><td>Eliminar elemento</td></tr>
+                        <tr><td><span class="kbd">S</span></td><td>Alternar estilo de arista</td></tr>
+                        <tr><td><span class="kbd">B</span></td><td>Añadir bucle</td></tr>
+                        <tr><td><span class="kbd">R</span></td><td>Renombrar</td></tr>
+                        <tr><td><span class="kbd">W</span></td><td>Cambiar peso</td></tr>
+                        <tr><td><span class="kbd">C</span></td><td>Cambiar color</td></tr>
+                        <tr><td><span class="kbd">A</span></td><td>Cambiar dirección</td></tr>
+                        <tr><td><span class="kbd">E</span></td><td>Nombre, peso, ambos, ninguno</td></tr>
+                        <tr><td><span class="kbd">M</span></td><td>Menú de matrices</td></tr>
+                        <tr><td><span class="kbd">F</span></td><td>Alternar estilo de vértice</td></tr>
+                        <tr><td><span class="kbd">Ctrl Z</span></td><td>Deshacer</td></tr>
+                        <tr><td><span class="kbd">Ctrl Y</span></td><td>Rehacer</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section id="algorithms" class="doc-section">
+            <h2 class="doc-h2">Algoritmos</h2>
+            <p class="doc-p">
+                Se seleccionan desde el menú <span class="doc-pill">Algoritmos</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>
+                o, si procede, <span class="doc-pill">Por pasos</span>.
+            </p>
+
+            <section id="algorithms-list" class="doc-subsection">
+                <h3 class="doc-h3">Implementados</h3>
+
+                <div class="doc-table-wrap">
+                    <table class="doc-table">
+                        <thead>
+                        <tr>
+                            <th>Algoritmo</th>
+                            <th>Descripción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>BFS</td><td>Recorre por niveles desde un origen.</td></tr>
+                        <tr><td>DFS</td><td>Recorre en profundidad antes de retroceder.</td></tr>
+                        <tr><td>Dijkstra</td><td>Camino mínimo sin pesos negativos.</td></tr>
+                        <tr><td>Bellman–Ford</td><td>Camino mínimo con pesos negativos y detección de ciclos negativos.</td></tr>
+                        <tr><td>Kruskal</td><td>Árbol de expansión mínima en no dirigidos.</td></tr>
+                        <tr><td>Edmonds 2</td><td>Emparejamiento máximo en grafos generales.</td></tr>
+                        <tr><td>Hierholzer</td><td>Ciclo o camino euleriano.</td></tr>
+                        <tr><td>Cartero Chino</td><td>Recorrido cerrado mínimo que pasa por todas las aristas.</td></tr>
+                        <tr><td>Ford–Fulkerson</td><td>Flujo máximo en redes.</td></tr>
+                        <tr><td>Hamilton bajo peso</td><td>Heurístico priorizando pesos bajos.</td></tr>
+                        <tr><td>Hamilton mínimo peso</td><td>Fuerza bruta.</td></tr>
+                        <tr><td>Hopcroft–Tarjan</td><td>Vértices y aristas de corte en no dirigidos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="algorithms-animations" class="doc-subsection">
+                <h3 class="doc-h3">Animaciones</h3>
+
+                <div class="doc-media">
+                    <video class="doc-video" autoplay muted loop playsinline src="/docs/assets/ford-fulkerson.mp4"></video>
+                    <div class="doc-media-caption">Ford–Fulkerson con ejecución visual paso a paso.</div>
+                </div>
+            </section>
+        </section>
+
+        <section id="social" class="doc-section">
+            <h2 class="doc-h2">Algoritmos de redes sociales</h2>
+
+            <div class="doc-table-wrap">
+                <table class="doc-table">
+                    <thead>
+                    <tr>
+                        <th>Métrica</th>
+                        <th>Descripción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Centralidad de grado</td><td>Número de conexiones directas.</td></tr>
+                    <tr><td>Intermediación</td><td>Caminos mínimos que pasan por el vértice.</td></tr>
+                    <tr><td>Cercanía</td><td>Distancia mínima media al resto.</td></tr>
+                    <tr><td>Excentricidad</td><td>Mayor distancia mínima a cualquier otro.</td></tr>
+                    <tr><td>Clustering global</td><td>Agrupamiento global del grafo.</td></tr>
+                    <tr><td>Clustering local</td><td>Agrupamiento entre vecinos.</td></tr>
+                    <tr><td>Clustering medio</td><td>Media del clustering local.</td></tr>
+                    <tr><td>Alcance medio</td><td>Distancia media entre pares alcanzables.</td></tr>
+                    <tr><td>Diámetro</td><td>Máxima distancia mínima entre pares.</td></tr>
+                    <tr><td>PageRank</td><td>Importancia basada en enlaces entrantes.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="info" class="doc-section">
+            <h2 class="doc-h2">Opciones de información del grafo</h2>
+            <p class="doc-p">Desde el menú <span class="doc-pill">Grafo</span>:</p>
+            <ul class="doc-ul">
+                <li>Información del grafo (conteos, peso total, conectividad, desigualdad triangular)</li>
+                <li>Grados de vértices (entrada/salida si es dirigido)</li>
+                <li>Grafo subyacente</li>
+                <li>Convertir a dirigido (bidireccional)</li>
+                <li>Generar grafo completo (hasta 25 vértices)</li>
+            </ul>
+        </section>
+
+        <section id="matrices" class="doc-section">
+            <h2 class="doc-h2">Matrices del grafo</h2>
+            <p class="doc-p">Desde <span class="doc-pill">Matriz</span>:</p>
+            <div class="doc-tags">
+                <span class="doc-tag">Adyacencia</span>
+                <span class="doc-tag">Pesos</span>
+                <span class="doc-tag">Incidencia</span>
+                <span class="doc-tag">Acceso</span>
+            </div>
+
+            <div class="doc-media">
+                <video class="doc-video" autoplay muted loop playsinline src="/docs/assets/matriz_ady.mp4"></video>
+                <div class="doc-media-caption">Ejemplo de importación con matrices.</div>
+            </div>
+        </section>
+
+        <section id="io" class="doc-section">
+            <h2 class="doc-h2">Archivo (Importaciones y exportaciones)</h2>
+
+            <div class="doc-grid-2">
+                <div class="doc-panel">
+                    <div class="doc-panel-title">Importaciones</div>
+                    <ul class="doc-ul">
+                        <li>A mano usando matrices</li>
+                        <li>Matrices CSV (adyacencia, pesos, incidencia)</li>
+                        <li>Formato nativo (.json)</li>
+                        <li>SWGraphs (.xml)</li>
+                    </ul>
+                </div>
+
+                <div class="doc-panel">
+                    <div class="doc-panel-title">Exportaciones</div>
+                    <ul class="doc-ul">
+                        <li>Matrices CSV (adyacencia, pesos, incidencia)</li>
+                        <li>Formato nativo (.json)</li>
+                        <li>SWGraphs (.xml)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="doc-callout">
+                <div class="doc-callout-title">Errores de importación</div>
+                <div class="doc-callout-text">Si hay un error, la app mostrará un código para localizar el problema.</div>
+            </div>
+        </section>
+    </article>
+</div>
