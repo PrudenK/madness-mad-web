@@ -6,8 +6,8 @@ import "../styles/doc.css"
 
 import TopBar from "../components/TopBar.astro"
 import Footer from "../components/Footer.astro"
-import DocContent from "../components/DocContent.astro"
 import DocSidebar from "../components/DocSidebar.astro"
+import DocContent from "../components/DocContent.astro"
 ---
 
 <!doctype html>
@@ -19,24 +19,24 @@ import DocSidebar from "../components/DocSidebar.astro"
     <title>MadnessMad Docs</title>
 </head>
 <body>
-<TopBar />
 
+<TopBar />
 <main class="main doc-main">
+
     <div class="doc-layout">
         <aside class="doc-sidebar">
             <DocSidebar />
         </aside>
 
-        <section class="doc-content">
-            <div class="doc-content-inner">
+        <section class="doc-center">
+            <div class="doc-inner">
                 <DocContent />
             </div>
         </section>
-
-        <div class="doc-gutter"></div>
     </div>
 </main>
 
 <Footer />
 </body>
 </html>
+
