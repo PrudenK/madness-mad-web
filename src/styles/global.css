@@ -2,6 +2,10 @@
 
 html,body{height:100%}
 
+:root{
+    color-scheme: dark;
+}
+
 
 
 .page{
