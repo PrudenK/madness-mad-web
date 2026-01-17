@@ -358,3 +358,158 @@
         font-size:36px;
     }
 }
+
+
+.controls-tabrow{
+    display:flex;
+    gap:8px;
+    padding:10px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.20);
+    backdrop-filter: blur(10px);
+    margin:10px 0 14px;
+}
+
+.controls-tab{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:rgba(255,255,255,.75);
+    font-size:14px;
+    font-weight:720;
+    padding:10px 12px;
+    border-radius:12px;
+    cursor:pointer;
+    flex:1;
+    text-align:center;
+}
+
+.controls-tab:hover{
+    background:rgba(255,255,255,.08);
+    color:rgba(255,255,255,.92);
+}
+
+.controls-tab.is-active{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.92);
+}
+
+.controls-panel{
+    display:none;
+}
+
+.controls-panel.is-active{
+    display:block;
+}
+
+.controls-block{
+    margin-top:14px;
+}
+
+.controls-subtitle{
+    color:rgba(255,255,255,.88);
+    font-weight:780;
+    font-size:16px;
+    margin:8px 0 8px;
+}
+
+.controls-note{
+    margin:10px 0 0;
+    color:rgba(255,255,255,.62);
+    font-size:13px;
+    line-height:1.65;
+}
+
+.shortcut-list{
+    margin-top:8px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.14);
+    overflow:hidden;
+}
+
+.shortcut-row{
+    display:grid;
+    grid-template-columns:230px minmax(0, 1fr);
+    gap:14px;
+    padding:10px 12px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    align-items:center;
+}
+
+.shortcut-row:last-child{
+    border-bottom:none;
+}
+
+.shortcut-key{
+    color:rgba(255,255,255,.88);
+    font-weight:750;
+    font-size:14px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.shortcut-action{
+    color:rgba(255,255,255,.72);
+    font-size:14px;
+    line-height:1.5;
+}
+
+.shortcut-list-wide .shortcut-row{
+    grid-template-columns:260px minmax(0, 1fr);
+}
+
+.controls-subtabs{
+    display:flex;
+    gap:8px;
+    padding:10px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.12);
+    margin:12px 0 10px;
+}
+
+.controls-subtab{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    font-weight:720;
+    padding:9px 12px;
+    border-radius:12px;
+    cursor:pointer;
+    flex:1;
+    text-align:center;
+}
+
+.controls-subtab:hover{
+    background:rgba(255,255,255,.08);
+    color:rgba(255,255,255,.90);
+}
+
+.controls-subtab.is-active{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.92);
+}
+
+.controls-subpanel{
+    display:none;
+}
+
+.controls-subpanel.is-active{
+    display:block;
+}
+
+@media (max-width:720px){
+    .shortcut-row{
+        grid-template-columns:1fr;
+    }
+    .shortcut-key{
+        white-space:normal;
+    }
+}
