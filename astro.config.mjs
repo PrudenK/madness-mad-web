@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
     site: 'https://prudenk.github.io',
-    base: '/madness-mad-web/',
+    base: '/madness-mad-web',
     vite: {
         plugins: [tailwindcss()]
     }
