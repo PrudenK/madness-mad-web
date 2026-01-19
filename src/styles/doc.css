@@ -148,7 +148,8 @@
 }
 
 .doc-callout{
-    margin-top:12px;
+    margin-top:20px;
+    margin-bottom:20px;
     border-radius:16px;
     border:1px solid rgba(255,255,255,.12);
     background:rgba(255,255,255,.06);
@@ -323,7 +324,7 @@
     border:1px solid rgba(255,255,255,.10);
     background:rgba(0,0,0,.20);
     backdrop-filter: blur(10px);
-    margin:10px 0 14px;
+    margin:20px 0 14px;
 }
 
 .controls-tab{
@@ -367,7 +368,7 @@
     color:rgba(255,255,255,.88);
     font-weight:780;
     font-size:16px;
-    margin:8px 0 8px;
+    margin:28px 0 8px;
 }
 
 .controls-note{
