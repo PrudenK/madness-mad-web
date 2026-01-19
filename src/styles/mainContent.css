@@ -199,3 +199,12 @@
         flex:0 0 auto;
     }
 }
+
+.doc-link{
+    color:rgba(255,255,255,.88);
+    text-decoration:none;
+}
+
+.doc-link:hover{
+    text-decoration:underline;
+}
