@@ -4,10 +4,44 @@
             <img class="brand-logo" src="/logo_mm_sin_fondo.png" alt="MadnessMad" />
             <span class="brand-text">MadnessMad</span>
         </a>
-        <div class="links">
+
+        <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="links" data-links>
             <a href="/doc">Documentación</a>
-            <a href="#demo">Demo</a>
-            <a href="#contact">Contacto</a>
+            <a href="/#demo">Demo</a>
+            <a href="/#contact">Contacto</a>
         </div>
     </nav>
+
+    <div class="mobile-menu" data-mobile aria-hidden="true">
+        <a href="/doc">Documentación</a>
+        <a href="/#demo">Demo</a>
+        <a href="/#contact">Contacto</a>
+    </div>
+
+    <script is:inline>
+        (() => {
+            const btn = document.querySelector('.menu-btn')
+            const menu = document.querySelector('[data-mobile]')
+            if (!btn || !menu) return
+
+            const setOpen = (open) => {
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+                menu.classList.toggle('is-open', open)
+                menu.setAttribute('aria-hidden', open ? 'false' : 'true')
+            }
+
+            btn.addEventListener('click', () => {
+                const open = btn.getAttribute('aria-expanded') === 'true'
+                setOpen(!open)
+            })
+
+            window.addEventListener('resize', () => {
+                if (window.matchMedia('(min-width: 820px)').matches) setOpen(false)
+            })
+        })()
+    </script>
 </header>

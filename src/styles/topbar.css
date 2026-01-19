@@ -14,7 +14,6 @@
     -webkit-backdrop-filter:blur(12px);
 }
 
-
 .topbar-inner{
     max-width:1100px;
     margin:0 auto;
@@ -24,10 +23,24 @@
     justify-content:space-between;
 }
 
-.topbar .brand{
+.brand{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    text-decoration:none;
+}
+
+.brand-logo{
+    width:44px;
+    height:44px;
+    display:block;
+    filter: brightness(0) invert(1);
+}
+
+.brand-text{
     font-weight:700;
-    letter-spacing:.2px;
     color:rgba(255,255,255,.92);
+    font-size:26px;
 }
 
 .topbar .links{
@@ -45,25 +58,58 @@
     color:rgba(255,255,255,.92);
 }
 
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:5px;
-    text-decoration:none;
+.menu-btn{
+    display:none;
+    border:none;
+    background:transparent;
+    color:rgba(255,255,255,.90);
+    font-size:22px;
+    padding:10px 12px;
+    border-radius:12px;
+    cursor:pointer;
 }
 
-.brand-logo{
-    width:44px;
-    height:44px;
+.menu-btn:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.mobile-menu{
+    display:none;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px 16px;
+}
+
+.mobile-menu a{
     display:block;
-    filter: brightness(0) invert(1);
+    padding:12px 10px;
+    border-radius:12px;
+    color:rgba(255,255,255,.78);
+    text-decoration:none;
+    font-size:18px;
 }
 
-
-.brand-text{
-    font-weight:700;
+.mobile-menu a:hover{
+    background:rgba(255,255,255,.08);
     color:rgba(255,255,255,.92);
-    font-size:26px;
+}
 
+.mobile-menu.is-open{
+    display:block;
+}
+
+@media (max-width:819px){
+    .topbar-inner{
+        padding:18px 20px;
+    }
+
+    .topbar .links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+    }
 }
