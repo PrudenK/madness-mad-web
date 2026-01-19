@@ -1,0 +1,34 @@
+.privacy{
+    max-width:860px;
+}
+
+.privacy-title{
+    margin:0 0 10px;
+    font-size:42px;
+    line-height:1.1;
+    font-weight:850;
+    color:rgba(255,255,255,.92);
+}
+
+.privacy-updated{
+    margin:0 0 18px;
+    color:rgba(255,255,255,.60);
+}
+
+.privacy-h2{
+    margin:26px 0 10px;
+    font-size:22px;
+    font-weight:800;
+    color:rgba(255,255,255,.90);
+}
+
+.privacy-ul{
+    margin:10px 0 16px;
+    padding-left:18px;
+    color:rgba(255,255,255,.72);
+    line-height:1.7;
+}
+
+.privacy-ul li{
+    margin:6px 0;
+}

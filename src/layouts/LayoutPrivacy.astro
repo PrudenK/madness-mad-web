@@ -1,0 +1,110 @@
+---
+import "../styles/global.css"
+import "../styles/topbar.css"
+import "../styles/footer.css"
+import "../styles/mainContent.css"
+import "../styles/doc.css"
+
+import TopBar from "../components/TopBar.astro"
+import Footer from "../components/Footer.astro"
+
+const BASE = import.meta.env.BASE_URL
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href={`${BASE}/logo_mm_sin_fondo_negro.png`} />
+    <link rel="icon" type="image/png" href={`${BASE}/logo_mm_sin_fondo_blanco.png`} media="(prefers-color-scheme: dark)" />
+    <title>Política de Privacidad</title>
+</head>
+<body>
+<TopBar />
+
+<main class="main">
+    <section class="section extra-padding">
+        <div class="section-inner">
+            <h1 class="section-title">Política de Privacidad</h1>
+            <p class="section-text"><strong>Última actualización:</strong> 19/01/2026</p>
+
+            <p class="section-text">
+                Esta Política de Privacidad describe cómo se tratan los datos personales en el sitio web de <strong>MadnessMad</strong>.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">1. Responsable del tratamiento</h2>
+            <p class="section-text">
+                Responsable: <strong>Pruden Costa</strong><br />
+                Contacto: <a class="doc-link" href="mailto:prudencosta@gmail.com">prudencosta@gmail.com</a>
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">2. Datos que se recogen</h2>
+            <p class="section-text">
+                El Sitio no incluye formularios ni mecanismos de registro, y no recopila datos personales de forma activa.
+            </p>
+            <p class="section-text">
+                La única vía de recogida directa de datos es:
+            </p>
+            <ul class="doc-ul">
+                <li><strong>Contacto por email (mailto:)</strong>: si envías un correo a prudencosta@gmail.com, se tratarán tu dirección de correo y el contenido del mensaje.</li>
+            </ul>
+            <p class="section-text">
+                Además, como en cualquier sitio web, pueden existir:
+            </p>
+            <ul class="doc-ul">
+                <li><strong>Datos técnicos de acceso (logs)</strong>: registros técnicos necesarios para servir el Sitio. Estos registros los gestiona el proveedor de alojamiento.</li>
+            </ul>
+
+            <h2 class="section-title" style="margin-top:28px;">3. Finalidad del tratamiento</h2>
+            <ul class="doc-ul">
+                <li>Responder consultas y gestionar comunicaciones iniciadas por el usuario por correo electrónico.</li>
+                <li>Mantener la seguridad y el correcto funcionamiento del Sitio (logs técnicos del alojamiento).</li>
+            </ul>
+
+            <h2 class="section-title" style="margin-top:28px;">4. Base legal</h2>
+            <ul class="doc-ul">
+                <li><strong>Consentimiento</strong> del usuario al contactar por correo.</li>
+                <li><strong>Interés legítimo</strong> en mantener la seguridad y operación del Sitio.</li>
+            </ul>
+
+            <h2 class="section-title" style="margin-top:28px;">5. Cookies y analítica</h2>
+            <p class="section-text">
+                El Sitio no utiliza cookies ni herramientas de analítica.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">6. Cesiones y terceros</h2>
+            <p class="section-text">
+                El Sitio puede incluir enlaces a terceros (por ejemplo, GitHub o LinkedIn). Al acceder a esos enlaces, se aplican las políticas de privacidad de dichos terceros.
+            </p>
+            <p class="section-text">
+                El alojamiento del Sitio se realiza mediante un proveedor de hosting (por ejemplo, GitHub Pages), que puede tratar datos técnicos necesarios para entregar el contenido.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">7. Conservación de datos</h2>
+            <ul class="doc-ul">
+                <li><strong>Emails</strong>: se conservarán el tiempo necesario para responder y gestionar la comunicación, y posteriormente durante un periodo razonable para mantener un histórico de conversaciones si fuera necesario.</li>
+                <li><strong>Logs técnicos</strong>: según las políticas y plazos del proveedor de alojamiento.</li>
+            </ul>
+
+            <h2 class="section-title" style="margin-top:28px;">8. Derechos</h2>
+            <p class="section-text">
+                Puedes solicitar acceso, rectificación, supresión u oposición (cuando proceda) escribiendo a <a class="doc-link" href="mailto:prudencosta@gmail.com">prudencosta@gmail.com</a>.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">9. Cambios en esta política</h2>
+            <p class="section-text">
+                Esta Política puede actualizarse si el Sitio cambia. La fecha de “Última actualización” indica la versión vigente.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">10. Contacto</h2>
+            <p class="section-text">
+                Para cualquier consulta relacionada con privacidad: <a class="doc-link" href="mailto:prudencosta@gmail.com">prudencosta@gmail.com</a>
+            </p>
+        </div>
+    </section>
+</main>
+
+<Footer />
+</body>
+</html>
