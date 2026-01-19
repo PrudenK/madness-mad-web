@@ -113,3 +113,17 @@
         justify-content:center;
     }
 }
+
+
+:root{
+    --topbar-h:84px;
+    --anchor-offset:16px;
+}
+
+.doc-section,
+.doc-subsection{
+    scroll-margin-top: calc(var(--topbar-h) + var(--anchor-offset));
+}
+
+
+

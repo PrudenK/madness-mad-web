@@ -26,3 +26,15 @@ html, body{
     min-width:0;
 }
 
+:root{
+    --topbar-h:84px;
+    --anchor-offset:16px;
+}
+
+html{
+    scroll-padding-top: calc(var(--topbar-h) + var(--anchor-offset));
+}
+
+.section[id]{
+    scroll-margin-top: calc(var(--topbar-h) + var(--anchor-offset));
+}
