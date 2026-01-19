@@ -1,18 +1,22 @@
+---
+const BASE = import.meta.env.BASE_URL
+---
+
 <nav class="ds">
     <div class="ds-title">Documentación</div>
 
     <details class="ds-group">
         <summary class="ds-link ds-summary">Interfaz</summary>
-        <a class="ds-link ds-indent" href="/doc#ui-general">General</a>
-        <a class="ds-link ds-indent" href="/doc#ui-vertices">Vértices</a>
-        <a class="ds-link ds-indent" href="/doc#ui-aristas">Aristas</a>
-        <a class="ds-link ds-indent" href="/doc#ui-bucles">Bucles</a>
+        <a class="ds-link ds-indent" href={`${BASE}doc#ui-general`}>General</a>
+        <a class="ds-link ds-indent" href={`${BASE}doc#ui-vertices`}>Vértices</a>
+        <a class="ds-link ds-indent" href={`${BASE}doc#ui-aristas`}>Aristas</a>
+        <a class="ds-link ds-indent" href={`${BASE}doc#ui-bucles`}>Bucles</a>
     </details>
 
-    <a class="ds-link" href="/doc#controls">Controles</a>
-    <a class="ds-link" href="/doc#algorithms">Algoritmos</a>
-    <a class="ds-link" href="/doc#social">Redes sociales</a>
-    <a class="ds-link" href="/doc#matrices">Matrices</a>
-    <a class="ds-link" href="/doc#io">Archivo</a>
-    <a class="ds-link" href="/doc#platform">Plataformas soportadas</a>
+    <a class="ds-link" href={`${BASE}doc#controls`}>Controles</a>
+    <a class="ds-link" href={`${BASE}doc#algorithms`}>Algoritmos</a>
+    <a class="ds-link" href={`${BASE}doc#social`}>Redes sociales</a>
+    <a class="ds-link" href={`${BASE}doc#matrices`}>Matrices</a>
+    <a class="ds-link" href={`${BASE}doc#io`}>Archivo</a>
+    <a class="ds-link" href={`${BASE}doc#platform`}>Plataformas soportadas</a>
 </nav>

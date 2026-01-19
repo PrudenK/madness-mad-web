@@ -1,7 +1,11 @@
+---
+const BASE = import.meta.env.BASE_URL
+---
+
 <header class="topbar">
     <nav class="topbar-inner">
-        <a class="brand" href="/">
-            <img class="brand-logo" src="/logo_mm_sin_fondo.png" alt="MadnessMad" />
+        <a class="brand" href={BASE}>
+            <img class="brand-logo" src={`${BASE}logo_mm_sin_fondo.png`} alt="MadnessMad" />
             <span class="brand-text">MadnessMad</span>
         </a>
 
@@ -10,16 +14,16 @@
         </button>
 
         <div class="links" data-links>
-            <a href="/doc">Documentación</a>
-            <a href="/#demo">Ejemplos</a>
-            <a href="/#contact">Contacto</a>
+            <a href={`${BASE}doc`}>Documentación</a>
+            <a href={`${BASE}#demo`}>Ejemplos</a>
+            <a href={`${BASE}#contact`}>Contacto</a>
         </div>
     </nav>
 
     <div class="mobile-menu" data-mobile aria-hidden="true">
-        <a href="/doc">Documentación</a>
-        <a href="/#demo">Ejemplos</a>
-        <a href="/#contact">Contacto</a>
+        <a href={`${BASE}doc`}>Documentación</a>
+        <a href={`${BASE}#demo`}>Ejemplos</a>
+        <a href={`${BASE}#contact`}>Contacto</a>
     </div>
 
     <script is:inline>
