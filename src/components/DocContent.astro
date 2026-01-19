@@ -30,11 +30,8 @@
         <section id="ui-vertices" class="doc-subsection">
             <h3 class="doc-h3">Vértices</h3>
             <ul class="doc-ul">
-                <li>Crear con <span class="kbd">V</span>.</li>
-                <li>Renombrar con <span class="kbd">R</span> o menú contextual (click derecho).</li>
-                <li>Cambiar color con <span class="kbd">C</span> o menú contextual.</li>
-                <li>Cambiar estilo con <span class="kbd">F</span>.</li>
-                <li>Modificar tamaño con <span class="kbd">Ctrl +</span> y <span class="kbd">Ctrl -</span>.</li>
+                <li>Crear con <span class="kbd">V</span> o con <span class="kbd">click izquierdo</span> (en modo legacy).</li>
+                <li>Nombre, tamaño, color y estilo son editables.</li>
             </ul>
         </section>
 
@@ -52,6 +49,7 @@
             <h3 class="doc-h3">Bucles</h3>
             <ul class="doc-ul">
                 <li>Tecla <span class="kbd">B</span> en un vértice seleccionado.</li>
+                <li>Peso, tamaño, nombre, color, ángulo y estilo son editables.</li>
             </ul>
         </section>
     </section>
@@ -141,6 +139,21 @@
                         <div class="shortcut-row"><div class="shortcut-key">Click izq</div><div class="shortcut-action">Seleccionar / Deseleccionar</div></div>
                         <div class="shortcut-row"><div class="shortcut-key">Shift + click izq</div><div class="shortcut-action">Añadir a selección</div></div>
                         <div class="shortcut-row"><div class="shortcut-key">Shift + click izq + arrastrar</div><div class="shortcut-action">Rectángulo de selección</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Aristas</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + click izq + arrastrar</div><div class="shortcut-action">Ajustar curvatura de la arista (desde el centro)</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Bucles</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + click izq + arrastrar</div><div class="shortcut-action">Ajustar tamaño del bucle (desde la etiqueta)</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Shift + click izq + arrastrar</div><div class="shortcut-action">Ajustar ángulo del bucle (desde la etiqueta)</div></div>
                     </div>
                 </div>
             </div>
@@ -356,5 +369,21 @@
             </tbody>
         </table>
     </div>
+
+    <section id="platform" class="doc-section">
+        <h2 class="doc-h2">Plataformas soportadas</h2>
+
+        <p class="doc-p">
+            MadnessMad es una aplicación de escritorio <strong>multiplataforma</strong>. Se distribuye con binarios propios por sistema operativo, por lo que
+            <strong>no necesitas tener Java instalado</strong>.
+        </p>
+
+        <ul class="doc-ul">
+            <li><strong>Linux</strong>: paquete <span class="doc-pill">.deb</span>.</li>
+            <li><strong>Windows 10 y 11</strong>: instalador <span class="doc-pill">.msi</span>.</li>
+            <li><strong>macOS</strong>: imagen <span class="doc-pill">.dmg</span>.</li>
+        </ul>
+    </section>
+
 
 </article>
