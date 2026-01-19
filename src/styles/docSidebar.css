@@ -102,3 +102,23 @@
     box-sizing:border-box;
 }
 
+@media (max-width: 1180px){
+    .doc-layout{
+        grid-template-columns:1fr;
+    }
+
+    .doc-sidebar{
+        width:auto;
+    }
+
+    .ds{
+        position:static;
+        top:auto;
+        left:auto;
+        width:100%;
+        max-height:none;
+        overflow:visible;
+        z-index:auto;
+    }
+}
+

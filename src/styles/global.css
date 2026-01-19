@@ -13,3 +13,16 @@ html,body{height:100%}
     z-index:2;
     color:#fff;
 }
+
+html, body{
+    overflow-x:hidden;
+}
+
+.doc-layout{
+    min-width:0;
+}
+
+.doc-center, .doc-inner, .doc-article{
+    min-width:0;
+}
+
