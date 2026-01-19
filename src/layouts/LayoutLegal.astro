@@ -1,0 +1,76 @@
+---
+import "../styles/global.css"
+import "../styles/topbar.css"
+import "../styles/footer.css"
+import "../styles/mainContent.css"
+import "../styles/doc.css"
+
+import TopBar from "../components/TopBar.astro"
+import Footer from "../components/Footer.astro"
+
+const BASE = import.meta.env.BASE_URL
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href={`${BASE}/logo_mm_sin_fondo_negro.png`} />
+    <link rel="icon" type="image/png" href={`${BASE}/logo_mm_sin_fondo_blanco.png`} media="(prefers-color-scheme: dark)" />
+    <title>Aviso Legal</title>
+</head>
+<body>
+<TopBar />
+
+<main class="main">
+    <section class="section extra-padding">
+        <div class="section-inner">
+            <h1 class="section-title">Aviso Legal</h1>
+            <p class="section-text"><strong>Última actualización:</strong> 19/01/2026</p>
+
+            <h2 class="section-title" style="margin-top:28px;">1. Titular del sitio</h2>
+            <p class="section-text">
+                Titular: <strong>Pruden Costa</strong><br />
+                Contacto: <a class="doc-link" href="mailto:prudencosta@gmail.com">prudencosta@gmail.com</a>
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">2. Objeto</h2>
+            <p class="section-text">
+                Este sitio web tiene carácter informativo y de contacto sobre el proyecto <strong>MadnessMad</strong>.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">3. Propiedad intelectual</h2>
+            <p class="section-text">
+                Salvo que se indique lo contrario, el contenido del sitio (textos, diseño, imágenes, logotipos y recursos) es titularidad del autor y está protegido por la normativa de propiedad intelectual.
+            </p>
+            <p class="section-text">
+                El nombre y elementos identificativos de <strong>MadnessMad</strong> (incluyendo logotipo y marca) se usan como distintivos del proyecto.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">4. Uso del sitio</h2>
+            <p class="section-text">
+                Se autoriza la visualización y uso del sitio para fines personales e informativos. Queda prohibida la reproducción, distribución o explotación del contenido con fines comerciales sin autorización expresa del titular.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">5. Enlaces a terceros</h2>
+            <p class="section-text">
+                El sitio puede incluir enlaces a páginas de terceros (por ejemplo, GitHub o LinkedIn). El titular no se responsabiliza del contenido, políticas o prácticas de dichos sitios.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">6. Exclusión de responsabilidad</h2>
+            <p class="section-text">
+                El titular no garantiza la ausencia de errores en el contenido ni que el sitio esté disponible de forma ininterrumpida. El uso de la información publicada se realiza bajo responsabilidad del usuario.
+            </p>
+
+            <h2 class="section-title" style="margin-top:28px;">7. Legislación aplicable y jurisdicción</h2>
+            <p class="section-text">
+                Este aviso se rige por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales que correspondan conforme a derecho.
+            </p>
+        </div>
+    </section>
+</main>
+
+<Footer />
+</body>
+</html>
