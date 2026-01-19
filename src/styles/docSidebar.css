@@ -64,3 +64,41 @@
     margin-top:6px;
 }
 
+
+
+.ds-group{
+    display:block;
+    margin:0;
+    padding:0;
+}
+
+.ds-summary{
+    display:flex;
+    align-items:center;
+    width:100%;
+    box-sizing:border-box;
+    margin:0;
+    list-style:none;
+    cursor:pointer;
+}
+
+.ds-summary::-webkit-details-marker{
+    display:none;
+}
+
+.ds-summary::after{
+    content:"▾";
+    margin-left:auto;
+    opacity:.7;
+}
+
+.ds-group:not([open]) .ds-summary::after{
+    content:"▸";
+}
+
+.ds-group > a.ds-link{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+}
+
