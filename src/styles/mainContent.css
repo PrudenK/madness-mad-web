@@ -137,10 +137,18 @@
 
 .demo-row{
     margin-top:22px;
+    padding-top:36px;
     display:flex;
     gap:18px;
     align-items:center;
+    border-top:1px solid rgba(255,255,255,.10);
 }
+
+.demo-row:first-child{
+    padding-top:0;
+    border-top:none;
+}
+
 
 .demo-row-reverse{
     flex-direction:row-reverse;
