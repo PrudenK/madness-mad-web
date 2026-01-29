@@ -1,41 +1,318 @@
 ---
 
 ---
-
+// TODO FIX subsection en controles
 <article class="doc-article">
     <section id="algorithms" class="doc-section">
-        <h2 class="doc-h2">Algoritmos</h2>
-        <p class="doc-p">
-            Se seleccionan desde el menú <span class="doc-pill">Algoritmos</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>.
-        </p>
+        <section class="doc-subsection">
+            <h2 class="doc-h2">Algoritmos</h2>
+            <p class="doc-p">
+                Se seleccionan desde el menú <span class="doc-pill">Algoritmos</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>.
+            </p>
+        </section>
+
+
+        <section id="algorithms-animations" class="doc-subsection">
+            <h3 class="doc-h3">Animaciones</h3>
+
+            <p class="doc-p">
+                Desde la pestaña de <span class="doc-pill">Ajustes</span> puedes configurar el comportamiento de las animaciones.
+                Existen dos grupos de algoritmos: los que usan <strong>animación rápida</strong>
+                (DFS, Dijkstra, Bellman–Ford, Hierholzer y Cartero Chino) y el resto, que emplean
+                <strong>animación normal</strong> o no tienen animación.
+            </p>
+
+            <p class="doc-p">
+                Las animaciones disponen de dos parámetros configurables:
+                <strong>duración de la animación</strong>, que define el tiempo que tarda en dibujarse cada arista,
+                y <strong>retraso entre niveles</strong>, que indica la espera antes de pintar la siguiente arista
+                o conjunto de aristas.
+            </p>
+
+
+        </section>
+
 
         <section id="algorithms-list" class="doc-subsection">
-            <h3 class="doc-h3">Implementados</h3>
+            <h3 class="doc-h3">Algoritmos implementados</h3>
 
-            <div class="doc-table-wrap">
-                <table class="doc-table">
-                    <thead>
-                    <tr>
-                        <th>Algoritmo</th>
-                        <th>Descripción</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>BFS</td><td>Recorre por niveles desde un origen.</td></tr>
-                    <tr><td>DFS</td><td>Recorre en profundidad antes de retroceder.</td></tr>
-                    <tr><td>Dijkstra</td><td>Camino mínimo sin pesos negativos.</td></tr>
-                    <tr><td>Bellman–Ford</td><td>Camino mínimo con pesos negativos y detección de ciclos negativos.</td></tr>
-                    <tr><td>Kruskal</td><td>Árbol de expansión mínima en no dirigidos.</td></tr>
-                    <tr><td>Edmonds 2</td><td>Emparejamiento máximo en grafos generales.</td></tr>
-                    <tr><td>Hierholzer</td><td>Ciclo o camino euleriano.</td></tr>
-                    <tr><td>Cartero Chino</td><td>Recorrido cerrado mínimo que pasa por todas las aristas.</td></tr>
-                    <tr><td>Ford–Fulkerson</td><td>Flujo máximo en redes.</td></tr>
-                    <tr><td>Hamilton bajo peso</td><td>Heurístico priorizando pesos bajos.</td></tr>
-                    <tr><td>Hamilton mínimo peso</td><td>Fuerza bruta.</td></tr>
-                    <tr><td>Hopcroft–Tarjan</td><td>Vértices y aristas de corte en no dirigidos.</td></tr>
-                    </tbody>
-                </table>
-            </div>
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">BFS (Breadth-First Search)</h4>
+
+                <p class="doc-p">
+                    El algoritmo BFS (Breadth-First Search) recorre el grafo por niveles a partir de un vértice
+                    origen, visitando primero todos los vértices adyacentes antes de avanzar a niveles más profundos.
+                </p>
+                <p class="doc-p">
+                    Este tipo de recorrido garantiza que la primera vez que se alcanza un vértice se ha seguido
+                    el camino con menor número de aristas desde el origen. Por este motivo, BFS permite calcular
+                    distancias mínimas en grafos no ponderados y es especialmente útil para estudiar la conectividad
+                    y la estructura general del grafo.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· No tiene restricciones</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Se anima por niveles y muestra el orden de visita en el panel de información.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">DFS (Depth-First Search)</h4>
+                <p class="doc-p">
+                    DFS explora el grafo siguiendo un camino hasta donde sea posible, avanzando de vértice en vértice
+                    sin retroceder hasta que no quedan opciones disponibles.
+                </p>
+                <p class="doc-p">
+                    Cuando alcanza un vértice sin vecinos no visitados, el algoritmo retrocede para continuar la
+                    exploración desde el último punto pendiente. Este comportamiento permite analizar la estructura
+                    del grafo, detectar ciclos y descomponerlo en componentes conexas, además de servir como base
+                    para algoritmos más avanzados.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· No tiene restricciones</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Utiliza animación rápida y muestra el recorrido completo seguido por el algoritmo.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Dijkstra</h4>
+                <p class="doc-p">
+                    El algoritmo de Dijkstra calcula los caminos mínimos desde un vértice origen al resto de vértices
+                    mediante un proceso iterativo de relajación de aristas.
+                </p>
+                <p class="doc-p">
+                    Garantiza resultados óptimos siempre que los pesos sean no negativos, siendo uno de los algoritmos
+                    fundamentales para el cálculo de rutas y costes mínimos.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo ponderado (si no lo es todas las aristas valen 1)</li>
+                    <li>· Pesos no negativos</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Animación rápida con resaltado de aristas relajadas y distancias finales por vértice.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Bellman–Ford</h4>
+                <p class="doc-p">
+                    Bellman–Ford calcula caminos mínimos repitiendo la relajación de todas las aristas del grafo,
+                    permitiendo trabajar con pesos negativos.
+                </p>
+                <p class="doc-p">
+                    Además, es capaz de detectar ciclos de coste negativo, lo que lo hace especialmente útil para
+                    validar la coherencia de grafos ponderados.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo ponderado (si no lo es todas las aristas valen 1)</li>
+                    <li>· No se permiten ciclos negativos</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Animación rápida y aviso visual si se detectan ciclos negativos.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Kruskal</h4>
+                <p class="doc-p">
+                    El algoritmo de Kruskal construye un árbol de expansión máxima o mínima seleccionando aristas de menor o mayor peso
+                    y añadiéndolas siempre que no formen ciclos.
+                </p>
+                <p class="doc-p">
+                    Permite conectar todos los vértices maximizando o minimizando el coste total y es especialmente adecuado para
+                    grafos no dirigidos.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo ponderado (si no lo es todas las aristas valen 1)</li>
+                    <li>· Grafo no dirigido</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Se muestran progresivamente las aristas que forman el árbol de expansión mínima.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Edmonds2 (Emparejamiento máximo)</h4>
+                <p class="doc-p">
+                    El algoritmo Edmonds 2 calcula un emparejamiento en un grafo no dirigido y ponderado,
+                    maximizando siempre el número de aristas emparejadas.
+                </p>
+
+                <p class="doc-p">
+                    Una vez alcanzada la máxima cardinalidad posible, el algoritmo optimiza el peso total
+                    del emparejamiento. En modo MAX se selecciona el emparejamiento de mayor peso, y en modo
+                    MIN el de menor peso, sin reducir en ningún caso el número de parejas.
+                </p>
+
+                <p class="doc-p">
+                    Esta prioridad se garantiza mediante una reducción del problema a un emparejamiento perfecto,
+                    evitando que la optimización del peso afecte al tamaño del emparejamiento.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo ponderado</li>
+                    <li>· Grafo no dirigido</li>
+                    <li>· Al dos vértices y una arista</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Resalta visualmente los pares emparejados resultantes.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Hierholzer</h4>
+                <p class="doc-p">
+                    El algoritmo de Hierholzer encuentra un camino o ciclo euleriano recorriendo todas las aristas
+                    del grafo exactamente una vez.
+                </p>
+                <p class="doc-p">
+                    Comienza construyendo un ciclo inicial y, mientras existan vértices del recorrido con aristas
+                    sin visitar, genera nuevos ciclos que se insertan en el recorrido ya construido hasta
+                    obtener una única trayectoria que incluye todas las aristas.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo euleriano</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Animación rápida del recorrido euleriano completo.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Cartero Chino</h4>
+                <p class="doc-p">
+                    El algoritmo del cartero chino busca un recorrido cerrado de coste mínimo que pase por todas
+                    las aristas del grafo al menos una vez.
+                </p>
+                <p class="doc-p">
+                    Si el grafo no es euleriano, el algoritmo identifica los vértices que impiden la existencia
+                    de un ciclo euleriano y añade recorridos auxiliares mínimos para equilibrarlo. Una vez
+                    equilibrado, se aplica un recorrido euleriano, integrando las aristas originales y las
+                    añadidas en una única trayectoria cerrada.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo conexo</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Añade aristas auxiliares si es necesario y muestra el recorrido final.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Ford–Fulkerson</h4>
+                <p class="doc-p">
+                    El algoritmo de Ford–Fulkerson calcula el flujo máximo entre un nodo origen y un nodo destino en
+                    una red mediante la búsqueda de caminos aumentantes.
+                </p>
+                <p class="doc-p">
+                    Ajusta progresivamente las capacidades residuales y sirve como base para el estudio de redes de
+                    flujo y optimización de recursos.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo dirigido y débilmente conexo</li>
+                    <li>· Aristas con peso no negativo</li>
+                    <li>· Grafo ponderado</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Visualiza los caminos aumentantes y el flujo resultante.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Hamilton (bajo peso)</h4>
+                <p class="doc-p">
+                    Este algoritmo aplica una heurística para buscar un camino hamiltoniano priorizando aristas de
+                    menor peso.
+                </p>
+                <p class="doc-p">
+                    No garantiza la solución óptima, pero reduce significativamente el coste computacional en grafos
+                    de mayor tamaño.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo no dirigido</li>
+                    <li>· Grafo conexo</li>
+                    <li>· Aristas con peso no negativo</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Muestra una solución aproximada obtenida mediante heurística.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Hamilton (mínimo peso)</h4>
+                <p class="doc-p">
+                    Calcula el camino hamiltoniano de menor coste evaluando todas las combinaciones posibles mediante
+                    fuerza bruta.
+                </p>
+                <p class="doc-p">
+                    Garantiza la solución óptima, aunque su complejidad exponencial lo limita a grafos pequeños.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo pequeño (hasta 10 vértices)</li>
+                    <li>· Grafo no dirigido</li>
+                    <li>· Grafo conexo</li>
+                    <li>· Aristas con peso no negativo</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Calcula y muestra la solución óptima exacta.
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Hopcroft–Tarjan</h4>
+                <p class="doc-p">
+                    El algoritmo de Hopcroft–Tarjan identifica vértices de corte y aristas puente en grafos no dirigidos.
+                </p>
+                <p class="doc-p">
+                    Permite analizar la robustez y los puntos críticos de la estructura del grafo.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>· Grafo no dirigido</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                    Resalta puntos de articulación y aristas críticas del grafo.
+                </p>
+            </section>
         </section>
+
+
     </section>
 </article>
