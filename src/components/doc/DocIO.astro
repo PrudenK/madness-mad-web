@@ -1,0 +1,59 @@
+---
+
+---
+
+<article class="doc-article">
+    <section id="io" class="doc-section">
+        <h2 class="doc-h2">Archivo</h2>
+
+        <div class="doc-grid-2 doc-io-grid">
+            <div class="doc-panel">
+                <div class="doc-panel-title">Importaciones</div>
+                <ul class="doc-ul">
+                    <li>A mano desde el programa usando matrices.</li>
+                    <li>Usando matrices (adyacencia, pesos e incidencia) en .csv.</li>
+                    <li>Formato nativo de MadnessMad (.json).</li>
+                    <li>Compatible con SWGraphs (.xml).</li>
+                </ul>
+            </div>
+
+            <div class="doc-panel">
+                <div class="doc-panel-title">Exportaciones</div>
+                <ul class="doc-ul">
+                    <li>Usando matrices (adyacencia, pesos e incidencia) en .csv.</li>
+                    <li>Formato nativo de MadnessMad (.json).</li>
+                    <li>Compatible con SWGraphs (.xml).</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="doc-callout">
+            <div class="doc-callout-title">Errores de importación</div>
+            <div class="doc-callout-text">
+                Si hay un error, la app mostrará un código. Según el tipo, el motivo es:
+            </div>
+        </div>
+
+        <div class="doc-table-wrap">
+            <table class="doc-table">
+                <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Motivo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>InvalidJsonStructure</td><td>La estructura del json no es correcta</td></tr>
+                <tr><td>InvalidJsonVertex</td><td>Error en el formato de los vértices en el json</td></tr>
+                <tr><td>InvalidJsonEdge</td><td>Error en el formato de las aristas en el json</td></tr>
+                <tr><td>InvalidCSVFormat</td><td>La estructura del csv es incorrecta</td></tr>
+                <tr><td>InvalidCSVIncidenceColumn</td><td>Error en la definición de las aristas en la matriz de incidencia</td></tr>
+                <tr><td>InvalidXMLFormat</td><td>Error en el formato del XML</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</article>

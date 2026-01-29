@@ -1,0 +1,194 @@
+---
+
+---
+
+
+<article class="doc-article">
+    <section id="controls" class="doc-section">
+        <h2 class="doc-h2">Controles del grafo</h2>
+
+
+        <p class="doc-p">
+            El modelizador dispone de dos modos de control: <strong>nativo</strong> y <strong>legacy</strong>. Puedes alternar entre ellos desde la barra de acciones.<br>
+            El modo <strong>legacy</strong> está pensado para un flujo más orientado al ratón: ofrece menos atajos y separa la edición en <strong>modo nodo</strong> y <strong>modo arista</strong>.<br>
+            El modo <strong>nativo</strong> prioriza la productividad, con muchos atajos de teclado para modelizar grafos con mayor rapidez.
+        </p>
+
+
+        <div class="controls-tabs" data-controls>
+            <div class="controls-tabrow" role="tablist" aria-label="Controles">
+                <button class="controls-tab is-active" type="button" role="tab" aria-selected="true" data-tab="common">Común</button>
+                <button class="controls-tab" type="button" role="tab" aria-selected="false" data-tab="native">Nativo</button>
+                <button class="controls-tab" type="button" role="tab" aria-selected="false" data-tab="legacy">Legacy</button>
+            </div>
+
+            <div class="controls-panel is-active" role="tabpanel" data-panel="common">
+
+
+                <h3 class="doc-h3">Controles generales</h3>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Atajos de teclado</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">D o BackSpace</div><div class="shortcut-action">Eliminar elemento</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">S</div><div class="shortcut-action">Alternar estilo de arista</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">B</div><div class="shortcut-action">Añadir bucle</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">R</div><div class="shortcut-action">Renombrar elemento</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">W</div><div class="shortcut-action">Cambiar peso de arista(s)</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">C</div><div class="shortcut-action">Cambiar color</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">A</div><div class="shortcut-action">Cambiar dirección arista</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">E</div><div class="shortcut-action">Mostrar nombre aristas</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">M</div><div class="shortcut-action">Abrir el menú de matrices</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">F</div><div class="shortcut-action">Alternar estilo de vértices</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + Z</div><div class="shortcut-action">Deshacer última acción</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + Y</div><div class="shortcut-action">Rehacer última acción</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl +/-</div><div class="shortcut-action">Cambiar tamaño vértice</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + A</div><div class="shortcut-action">Seleccionar todo</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + Shift + A</div><div class="shortcut-action">Eliminar selección</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + C</div><div class="shortcut-action">Copiar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + V</div><div class="shortcut-action">Pegar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + X</div><div class="shortcut-action">Cortar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + D</div><div class="shortcut-action">Duplicar</div></div>
+                    </div>
+
+                    <p class="controls-note">
+                        En Ctrl + C, V, D y X, si se pulsa Shift la acción se realiza ignorando el formato (colores y estilos).
+                    </p>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Atajos de teclado de la barra de herramientas</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 1</div><div class="shortcut-action">Abrir</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 2</div><div class="shortcut-action">Guardar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 3</div><div class="shortcut-action">Ejecutar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 4</div><div class="shortcut-action">Por pasos</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 5</div><div class="shortcut-action">Dirigido / no dirigido</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 6</div><div class="shortcut-action">Con / sin pesos</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 7</div><div class="shortcut-action">Matriz</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 8</div><div class="shortcut-action">Borrar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Alt + 9</div><div class="shortcut-action">Legacy / nativo</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Navegación por el grafo</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Click der + arrastrar</div><div class="shortcut-action">Desplazamiento</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + 0</div><div class="shortcut-action">Restaurar zoom</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + scroll</div><div class="shortcut-action">Zoom in / out</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Scroll</div><div class="shortcut-action">Desplazamiento vertical</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Shift + Scroll</div><div class="shortcut-action">Desplazamiento horizontal</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Selección y menús</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Click der</div><div class="shortcut-action">Abrir menú</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Click izq</div><div class="shortcut-action">Seleccionar / Deseleccionar</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Shift + click izq</div><div class="shortcut-action">Añadir a selección</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Shift + click izq + arrastrar</div><div class="shortcut-action">Rectángulo de selección</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Aristas</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + click izq + arrastrar</div><div class="shortcut-action">Ajustar curvatura de la arista (desde el centro)</div></div>
+                    </div>
+                </div>
+
+                <div class="controls-block">
+                    <div class="controls-subtitle">• Bucles</div>
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Ctrl + click izq + arrastrar</div><div class="shortcut-action">Ajustar tamaño del bucle (desde la etiqueta)</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Shift + click izq + arrastrar</div><div class="shortcut-action">Ajustar ángulo del bucle (desde la etiqueta)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-panel" role="tabpanel" data-panel="native">
+                <h3 class="doc-h3">Controles modo nativo</h3>
+
+                <div class="shortcut-list shortcut-list-wide">
+                    <div class="shortcut-row"><div class="shortcut-key">V</div><div class="shortcut-action">Crear vértice</div></div>
+                    <div class="shortcut-row"><div class="shortcut-key">Arrastrar (V → V)</div><div class="shortcut-action">Crear arista</div></div>
+                    <div class="shortcut-row"><div class="shortcut-key">Ctrl + click izq + arrastrar</div><div class="shortcut-action">Mover vértice</div></div>
+                    <div class="shortcut-row"><div class="shortcut-key">B (sobre un vértice)</div><div class="shortcut-action">Crear bucle</div></div>
+                </div>
+
+                <p class="controls-note">
+                    Con Ctrl + Alt + Click izquierdo + arrastrar sobre un vértice con varios seleccionados los mueve todos.
+                </p>
+            </div>
+
+            <div class="controls-panel" role="tabpanel" data-panel="legacy">
+                <h3 class="doc-h3">Controles modo legacy</h3>
+
+                <div class="shortcut-list">
+                    <div class="shortcut-row"><div class="shortcut-key">Espacio</div><div class="shortcut-action">Alternar modo nodo / arista</div></div>
+                </div>
+
+                <div class="controls-subtabs" role="tablist" aria-label="Legacy">
+                    <button class="controls-subtab is-active" type="button" role="tab" aria-selected="true" data-subtab="node">Modo nodo</button>
+                    <button class="controls-subtab" type="button" role="tab" aria-selected="false" data-subtab="edge">Modo arista</button>
+                </div>
+
+                <div class="controls-subpanel is-active" data-subpanel="node">
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Click izq + arrastrar</div><div class="shortcut-action">Mover vértice</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Click izq (en el vacío)</div><div class="shortcut-action">Crear vértice (si no hay)</div></div>
+                    </div>
+
+                    <p class="controls-note">
+                        Con Ctrl + Alt + Click izquierdo + arrastrar sobre un vértice con varios seleccionados los mueve todos.
+                    </p>
+                </div>
+
+                <div class="controls-subpanel" data-subpanel="edge">
+                    <div class="shortcut-list">
+                        <div class="shortcut-row"><div class="shortcut-key">Arrastrar (V → V)</div><div class="shortcut-action">Crear arista</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Click izq (sobre vértice)</div><div class="shortcut-action">Crear bucle si no tiene</div></div>
+                        <div class="shortcut-row"><div class="shortcut-key">Click izq (en el vacío)</div><div class="shortcut-action">Deseleccionar</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script is:inline>
+            (() => {
+                const root = document.querySelector('[data-controls]')
+                if (!root) return
+
+                const mainTabs = Array.from(root.querySelectorAll('.controls-tab'))
+                const mainPanels = Array.from(root.querySelectorAll('.controls-panel'))
+
+                const setMain = (key) => {
+                    mainTabs.forEach(b => {
+                        const on = b.dataset.tab === key
+                        b.classList.toggle('is-active', on)
+                        b.setAttribute('aria-selected', on ? 'true' : 'false')
+                    })
+                    mainPanels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === key))
+                }
+
+                mainTabs.forEach(b => b.addEventListener('click', () => setMain(b.dataset.tab)))
+
+                const subTabs = Array.from(root.querySelectorAll('.controls-subtab'))
+                const subPanels = Array.from(root.querySelectorAll('.controls-subpanel'))
+
+                const setSub = (key) => {
+                    subTabs.forEach(b => {
+                        const on = b.dataset.subtab === key
+                        b.classList.toggle('is-active', on)
+                        b.setAttribute('aria-selected', on ? 'true' : 'false')
+                    })
+                    subPanels.forEach(p => p.classList.toggle('is-active', p.dataset.subpanel === key))
+                }
+
+                subTabs.forEach(b => b.addEventListener('click', () => setSub(b.dataset.subtab)))
+            })()
+        </script>
+    </section>
+</article>
