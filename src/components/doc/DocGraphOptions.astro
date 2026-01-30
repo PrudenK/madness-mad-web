@@ -1,0 +1,118 @@
+---
+
+---
+
+<article class="doc-article">
+    <section id="actions" class="doc-section">
+
+        <section class="doc-subsection">
+            <h2 class="doc-h2">Grafo (acciones)</h2>
+            <p class="doc-p">
+                Este menú agrupa un conjunto de opciones generales aplicables al grafo.
+                Permite consultar información estructural, analizar propiedades básicas y realizar
+                transformaciones globales sobre el grafo.
+            </p>
+        </section>
+
+        <section class="doc-algorithm-card">
+            <h4 class="doc-h4">Información del grafo</h4>
+
+            <p class="doc-p">
+                Muestra un resumen global con las principales propiedades del grafo actual.
+                Esta información permite evaluar su estructura antes de aplicar algoritmos.
+            </p>
+
+            <ul class="doc-ul">
+                <li>Tipo de grafo: dirigido o no dirigido.</li>
+                <li>Tipo de pesos: ponderado o no ponderado.</li>
+                <li>Número de vértices y aristas.</li>
+                <li>Número de bucles y aristas paralelas.</li>
+                <li>Peso total del grafo.</li>
+            </ul>
+            <br/>
+            <p class="doc-p">
+                En función del tipo de grafo, se muestra información adicional:
+            </p>
+
+            <ul class="doc-ul">
+                <li>
+                    En grafos dirigidos: tipo de conectividad, verificación
+                    de la desigualdad triangular y número de componentes
+                    fuertemente conexas.
+                </li>
+                <li>
+                    En grafos no dirigidos: conectividad, vértices y aristas de corte, y verificación
+                    de la desigualdad triangular.
+                </li>
+            </ul>
+        </section>
+
+        <section class="doc-algorithm-card">
+            <h4 class="doc-h4">Grados de los vértices</h4>
+
+            <p class="doc-p">
+                Muestra el grado de cada vértice del grafo, adaptando la información al tipo de grafo.
+            </p>
+
+            <ul class="doc-ul">
+                <li>
+                    En grafos dirigidos se indica el grado de entrada y el grado de salida.
+                </li>
+                <li>
+                    En grafos no dirigidos se muestra el grado total de cada vértice.
+                </li>
+            </ul>
+        </section>
+
+        <section class="doc-algorithm-card">
+            <h4 class="doc-h4">Grafo subyacente</h4>
+
+            <p class="doc-p">
+                Convierte un grafo dirigido en su versión no dirigida, preservando su estructura esencial.
+            </p>
+
+            <ul class="doc-ul">
+                <li>El grafo pasa a considerarse no dirigido.</li>
+                <li>
+                    Si existen dos aristas opuestas entre los mismos vértices con el mismo peso,
+                    se conserva únicamente una.
+                </li>
+            </ul>
+        </section>
+
+        <section class="doc-algorithm-card">
+            <h4 class="doc-h4">Convertir a dirigido (bidireccional)</h4>
+
+            <p class="doc-p">
+                Garantiza la bidireccionalidad del grafo, adaptando su estructura según el caso.
+            </p>
+
+            <ul class="doc-ul">
+                <li>
+                    Si el grafo es no dirigido, cada arista se transforma en dos aristas dirigidas,
+                    una en cada sentido, manteniendo el mismo peso.
+                </li>
+                <li>
+                    Si el grafo ya es dirigido, se añaden únicamente las aristas necesarias para
+                    asegurar conexión en ambos sentidos sin duplicar aristas innecesariamente.
+                </li>
+            </ul>
+        </section>
+
+        <section class="doc-algorithm-card">
+            <h4 class="doc-h4">Generar grafo completo</h4>
+
+            <p class="doc-p">
+                Permite generar automáticamente un grafo completo a partir de un número indicado
+                de vértices.
+            </p>
+
+            <ul class="doc-ul">
+                <li>Se introduce el número de vértices (hasta un máximo de 25).</li>
+                <li>Se crea una arista entre cada par de vértices.</li>
+            </ul>
+        </section>
+
+
+    </section>
+</article>
