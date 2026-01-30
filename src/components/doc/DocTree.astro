@@ -9,10 +9,272 @@
             <p class="doc-p">
                 Se seleccionan desde el menú <span class="doc-pill">Árboles</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>.
             </p>
+            <p class="doc-p">
+                Un árbol es una estructura de grafo sin ciclos. Puede ser no dirigido, siendo conexo y acíclico,
+                o dirigido (arborescencia), donde existe un nodo raíz y un único camino dirigido desde este hacia cada vértice.
+                Los árboles se utilizan para modelar estructuras jerárquicas y aplicar algoritmos eficientes de recorrido.
+            </p>
         </section>
 
+        <section id="algorithms-list" class="doc-subsection">
+            <h3 class="doc-h3">Algoritmos implementados</h3>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Información del árbol</h4>
+
+                <p class="doc-p">
+                    El algoritmo analiza la estructura del grafo para comprobar si es acíclico.
+                    Si se detectan ciclos, el grafo no se considera un bosque.
+                </p>
+                <p class="doc-p">
+                    En caso de ser acíclico, el algoritmo identifica las componentes conexas que forman árboles,
+                    calcula su número y enumera los vértices que pertenecen a cada uno de ellos.
+                </p>
+                <p class="doc-p">
+                    Si existe una única componente conexa no trivial y no hay vértices aislados,
+                    el grafo se clasifica como un árbol. En caso contrario, se obtiene un bosque
+                    junto con la lista de vértices aislados.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>No tiene restricciones</li>
+                </ul>
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Indica si el grafo es un árbol un bosque o es cíclico.</li>
+                    <li>En caso de ser un bosque, muestra sus componentes.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver ejecución del algoritmo (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Mostrar hojas</h4>
+
+                <p class="doc-p">
+                    Si el grafo es acíclico, se identifican los vértices hoja de cada árbol.
+                    Un vértice hoja es aquel que tiene grado uno dentro de su componente.
+                </p>
+                <p class="doc-p">
+                    Si el grafo no es un bosque o no existen vértices hoja, el algoritmo no produce resultados.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser un bosque.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Pinta las hojas del grafo en el canvas.</li>
+                    <li>Muestra las hojas agrupadas por árbol en el panel de información.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver ejecución del algoritmo (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">LCA (Lowest Common Ancestor)</h4>
+
+                <p class="doc-p">
+                    El algoritmo LCA (ancestro común más bajo) se aplica sobre grafos no dirigidos que forman un bosque.
+                    Su objetivo es encontrar el vértice más profundo que es ancestro común de un conjunto de vértices seleccionados,
+                    dado un nodo raíz.
+                </p>
+                <p class="doc-p">
+                    A partir del nodo raíz, el algoritmo construye la relación padre–hijo mediante un recorrido en profundidad
+                    y calcula los ancestros de cada vértice seleccionado. El LCA se obtiene como el ancestro común situado a mayor profundidad.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>El grafo debe ser un bosque (no contener ciclos).</li>
+                    <li>Deben seleccionarse al menos dos vértices.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Selecciona al menos 2 nodos.</li>
+                    <li>Ejecuta el algoritmo.</li>
+                    <li>Selecciona el nodo raíz.</li>
+                    <li>Se indica el ancestro común más bajo encontrado o informa si no existe.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver explicación del algoritmo LCA (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Altura del árbol</h4>
+
+                <p class="doc-p">
+                    El algoritmo calcula la altura de un árbol a partir de un nodo raíz indicado.
+                    La altura se define como el número máximo de aristas en el camino más largo
+                    desde la raíz hasta una hoja.
+                </p>
+                <p class="doc-p">
+                    Para ello, se realiza un recorrido en profundidad desde la raíz,
+                    explorando todas las ramas del árbol y manteniendo la mayor profundidad alcanzada.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>El grafo debe ser un bosque (no contener ciclos).</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Selecciona el nodo raíz.</li>
+                    <li>Se muestra la raíz utilizada y el valor de la altura.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver explicación del cálculo de la altura de un árbol (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Balance del árbol</h4>
+
+                <p class="doc-p">
+                    El algoritmo calcula el balance de un árbol a partir de un nodo raíz indicado.
+                    El balance de un nodo mide la diferencia entre las alturas de sus subárboles
+                    y permite detectar descompensaciones estructurales.
+                </p>
+                <p class="doc-p">
+                    Para cada nodo se calcula la altura de su subárbol y su valor de balance.
+                    El balance se define como la diferencia entre la mayor y la menor altura de
+                    los subárboles hijos, considerando casos con cero o un solo hijo.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>El grafo debe ser un bosque (no contener ciclos).</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Se solicita un nodo raíz para el análisis.</li>
+                    <li>Se muestra una lista ordenada de nodos con su balance, altura de subárbol y número de hijos.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver explicación del balance de árboles (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Centro del árbol</h4>
+
+                <p class="doc-p">
+                    El algoritmo del centro del árbol identifica el vértice, o par de vértices, que minimiza
+                    la distancia máxima al resto de nodos del árbol. Este concepto permite caracterizar el
+                    punto más equilibrado de la estructura.
+                </p>
+                <p class="doc-p">
+                    Para su cálculo, el algoritmo obtiene el diámetro del árbol, definido como el camino
+                    más largo entre dos hojas. El centro se corresponde con el punto medio de dicho camino.
+                    Si el diámetro tiene longitud par, existe un único centro; si es impar, existen dos.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>El grafo debe ser un árbol (una única componente conexa).</li>
+                    <li>No deben existir vértices aislados.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Determina el centro o centros resultantes.</li>
+                    <li>Muestra la longitud y el camino del diámetro.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver explicación del centro del árbol (YouTube)
+                    </a>
+                </p>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Ajedrez (PGN) → árbol</h4>
+
+                <p class="doc-p">
+                    Una partida de ajedrez puede representarse como un árbol de variantes, donde cada jugada
+                    corresponde a un nodo y cada transición entre jugadas se modela como una arista.
+                    La línea principal y sus variantes, junto con sus subvariantes, generan una estructura
+                    ramificada que alterna turnos de blancas y negras.
+                </p>
+
+                <p class="doc-p">
+                    Esta representación permite analizar la partida desde un punto de vista estructural,
+                    facilitando la visualización de variantes, profundidades y bifurcaciones en el juego.
+                    El resultado es un grafo no dirigido y no ponderado que refleja la progresión de la partida.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>Disponer de un PGN válido o de un enlace a una partida de Lichess.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Ejecución en MadnessMad</strong><br>
+                </p>
+                <ul class="doc-ul">
+                    <li>Seleccionar la opción <span class="doc-pill">PGN</span> y pegar el texto de la partida.</li>
+                    <li>O bien seleccionar <span class="doc-pill">Lichess</span> e introducir el enlace de la partida.</li>
+                    <li>El grafo se genera automáticamente como un árbol de variantes con la notación de las jugadas.</li>
+                    <li>Cada nodo es blanco o negro en función de la jugada.</li>
+                </ul>
+
+                <p class="doc-p">
+                    <strong>Recursos adicionales</strong><br>
+                    <a class="doc-link" href="https://www.youtube.com/..." target="_blank">
+                        Ver ejemplo de partida convertida en árbol (YouTube)
+                    </a>
+                </p>
+            </section>
 
 
 
+        </section>
     </section>
 </article>
