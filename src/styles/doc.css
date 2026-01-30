@@ -541,3 +541,7 @@
     color: rgba(255,255,255,.95);
     border-bottom-color: rgba(255,255,255,.55);
 }
+
+#controls .doc-p {
+    margin-left: 16px;
+}
