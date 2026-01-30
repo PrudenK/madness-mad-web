@@ -3,33 +3,297 @@
 ---
 <article class="doc-article">
     <section id="social" class="doc-section">
-        <h2 class="doc-h2">Algoritmos de redes sociales</h2>
 
-        <p class="doc-p">
-            Se seleccionan desde el menú <span class="doc-pill">Redes sociales</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>.
-        </p>
+        <section class="doc-subsection">
+            <h2 class="doc-h2">Algoritmos de redes sociales</h2>
+            <p class="doc-p">
+                Se seleccionan desde el menú <span class="doc-pill">Redes sociales</span>. La ejecución se realiza con <span class="doc-pill">Ejecutar</span>.
+            </p>
+        </section>
 
-        <div class="doc-table-wrap">
-            <table class="doc-table">
-                <thead>
-                <tr>
-                    <th>Métrica</th>
-                    <th>Descripción</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr><td>Centralidad de grado</td><td>Número de conexiones directas.</td></tr>
-                <tr><td>Intermediación</td><td>Caminos mínimos que pasan por el vértice.</td></tr>
-                <tr><td>Cercanía</td><td>Distancia mínima media al resto.</td></tr>
-                <tr><td>Excentricidad</td><td>Mayor distancia mínima a cualquier otro.</td></tr>
-                <tr><td>Clustering global</td><td>Agrupamiento global del grafo.</td></tr>
-                <tr><td>Clustering local</td><td>Agrupamiento entre vecinos.</td></tr>
-                <tr><td>Clustering medio</td><td>Media del clustering local.</td></tr>
-                <tr><td>Alcance medio</td><td>Distancia media entre pares alcanzables.</td></tr>
-                <tr><td>Diámetro</td><td>Máxima distancia mínima entre pares.</td></tr>
-                <tr><td>PageRank</td><td>Importancia basada en enlaces entrantes.</td></tr>
-                </tbody>
-            </table>
-        </div>
+
+        <section id="algorithms-animations" class="doc-subsection">
+            <h3 class="doc-h3">Ornamentación</h3>
+
+            <p class="doc-p">
+                Para los <strong>algoritmos de redes sociales</strong> entra en juego una nueva métrica:
+                la <strong>ornamentación</strong> (disponible en la mayoría).
+                Esta métrica permite mostrar el resultado final del algoritmo con cuatro opciones:
+            </p>
+            <ul class="doc-ul doc-ul-pad">
+                <li><strong>Ninguna</strong>: muestra el grafo sin modificaciones.</li>
+                <li><strong>Texto</strong>: muestra el coeficiente calculado sobre cada vértice.</li>
+                <li><strong>Tamaño</strong>: el tamaño de cada vértice se ajusta según su coeficiente.</li>
+                <li><strong>Ambas</strong>: combina texto y tamaño.</li>
+            </ul>
+
+
+            <p class="doc-p">
+                Si se selecciona la opción <strong>Tamaño</strong> o <strong>Ambas</strong> y se modifica manualmente
+                el tamaño de un vértice, el panel de ornamentación se limpiará automáticamente
+                para evitar inconsistencias visuales.
+            </p>
+        </section>
+
+
+
+        <section id="algorithms-list" class="doc-subsection">
+            <h3 class="doc-h3">Algoritmos implementados</h3>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Centralidad de grado</h4>
+
+                <p class="doc-p">
+                    La centralidad de grado mide la importancia de un vértice en función del número de conexiones
+                    directas que tiene con otros vértices del grafo.
+                </p>
+                <p class="doc-p">
+                    Los vértices con mayor grado suelen representar nodos altamente conectados, lo que en redes
+                    sociales se interpreta como actores con gran nivel de interacción o influencia local.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>Sin restricciones.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>En grafos no dirigidos, se usan las componentes conexas clásicas.</li>
+                    <li>En grafos dirigidos, se emplean componentes débilmente conexas.</li>
+                    <li>El resultado se agrupa por componentes.</li>
+                    <li>Para cada nodo: V<sub>1</sub> → Grado (g) · Normalizado (n).</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Centralidad de intermediación (Betweenness)</h4>
+
+                <p class="doc-p">
+                    La centralidad de intermediación cuantifica cuántos de los caminos mínimos entre pares de
+                    vértices pasan por un vértice dado.
+                </p>
+                <p class="doc-p">
+                    Un valor alto indica que el vértice actúa como punto de paso o intermediario clave dentro de
+                    la red, siendo fundamental para la comunicación o el flujo de información.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>No se admiten pesos negativos.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Para cada nodo: V<sub>1</sub> → CB = (n) · CB Normalizado (n).</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Centralidad de cercanía</h4>
+
+                <p class="doc-p">
+                    La centralidad de cercanía mide lo cerca que está un vértice del resto de vértices del grafo,
+                    considerando la distancia mínima media hacia todos ellos.
+                </p>
+                <p class="doc-p">
+                    Los vértices con mayor cercanía pueden alcanzar rápidamente al resto de la red, lo que los
+                    hace relevantes en procesos de difusión o propagación.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>No se admiten pesos negativos.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>El resultado se agrupa por componentes conexas.</li>
+                    <li>S = Suma distancias C = Centricidad.</li>
+                    <li>Para cada nodo: V<sub>1</sub> → S: (n) · C: (n).</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Centralidad de excentricidad</h4>
+
+                <p class="doc-p">
+                    La excentricidad de un vértice se define como la mayor distancia mínima desde dicho vértice
+                    hasta cualquier otro vértice del grafo.
+                </p>
+                <p class="doc-p">
+                    Permite identificar vértices periféricos o centrales, y es una métrica clave para el cálculo
+                    del radio y el diámetro del grafo.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                    <li>No se admiten pesos negativos.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>El resultado se agrupa por componentes conexas.</li>
+                    <li>E = Excentricidad C = Centricidad.</li>
+                    <li>Para cada nodo: V<sub>1</sub> → E: (n) · C: (n).</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Clustering local</h4>
+
+                <p class="doc-p">
+                    El coeficiente de clustering local mide el grado en el que los vecinos de un vértice están
+                    conectados entre sí.
+                </p>
+                <p class="doc-p">
+                    Valores altos indican la presencia de comunidades locales densamente conectadas alrededor
+                    del vértice analizado.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>CCLC = Coeficiente de clustering local, d = grado.</li>
+                    <li>Para d(V) < 2 el CCLC = 0.</li>
+                    <li>Para cada nodo: V<sub>1</sub> → d = n, CCLC = n (normalizado).</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Clustering global</h4>
+
+                <p class="doc-p">
+                    El clustering global evalúa el nivel de agrupamiento del grafo completo, midiendo la
+                    proporción de triángulos presentes respecto a los posibles.
+                </p>
+                <p class="doc-p">
+                    Ofrece una visión general del grado de cohesión y estructura comunitaria de la red.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Ornamentación no disponible.</li>
+                    <li>El resultado es Cg = n. Cg = Clustering global.</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Clustering medio</h4>
+
+                <p class="doc-p">
+                    El clustering medio corresponde a la media de los coeficientes de clustering local de todos
+                    los vértices del grafo.
+                </p>
+                <p class="doc-p">
+                    Resume el nivel general de agrupamiento local de la red en un único valor representativo.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser no dirigido.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Ornamentación no disponible.</li>
+                    <li>El resultado es C = n. C = Clustering medio.</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Alcance medio</h4>
+
+                <p class="doc-p">
+                    El alcance medio mide la distancia media entre pares de vértices alcanzables dentro del grafo.
+                </p>
+                <p class="doc-p">
+                    Es una métrica global relacionada con la eficiencia de la red y la facilidad de conexión
+                    entre sus componentes.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>Si el grafo es dirigido tiene que ser fuertemente conexo.</li>
+                    <li>El grafo debe ser conexo</li>
+                    <li>No deben existir ciclos negativos</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Ornamentación no disponible.</li>
+                    <li>El resultado es AM(G) = n. AM(G) = alcance medio del grafo.</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">Diámetro</h4>
+
+                <p class="doc-p">
+                    El diámetro del grafo es la mayor distancia mínima entre cualquier par de vértices alcanzables.
+                </p>
+                <p class="doc-p">
+                    Representa el tamaño efectivo de la red y el peor caso de separación entre nodos.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>Si el grafo es dirigido tiene que ser fuertemente conexo.</li>
+                    <li>El grafo debe ser conexo</li>
+                    <li>No deben existir ciclos negativos</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Ornamentación no disponible.</li>
+                    <li>El resultado es Diámetro = n.</li>
+                </ul>
+            </section>
+
+            <section class="doc-algorithm-card">
+                <h4 class="doc-h4">PageRank</h4>
+
+                <p class="doc-p">
+                    PageRank asigna a cada vértice un valor de importancia que depende tanto del número de
+                    enlaces entrantes como de la relevancia de los vértices que los originan. La idea central
+                    es que un vértice es importante si recibe enlaces desde otros vértices que también lo son,
+                    propagando la importancia a lo largo del grafo dirigido.
+                </p>
+                <p class="doc-p">
+                    En MadnessMad, el algoritmo se implementa mediante un proceso iterativo basado en el modelo
+                    del <em>navegante aleatorio</em>. En cada iteración, parte de la importancia se distribuye a través
+                    de las aristas salientes de cada vértice y otra parte se redistribuye globalmente mediante
+                    el mecanismo de <strong>teletransporte</strong> (damping factor), que evita bloqueos y garantiza la
+                    convergencia incluso en presencia de vértices sin salidas. Este enfoque permite identificar
+                    nodos influyentes en redes dirigidas complejas como la web, redes de citas o grafos de dependencia.
+                </p>
+
+                <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
+                <ul class="doc-ul">
+                    <li>El grafo debe ser dirigido.</li>
+                    <li>Pesos no negativos.</li>
+                </ul>
+
+                <p class="doc-p"><strong>Ejecución en MadnessMad</strong></p>
+                <ul class="doc-ul">
+                    <li>Para cada nodo: V<sub>1</sub>: n.</li>
+                    <li>n ∈ (0,1) y ∑ n = 1</li>
+                </ul>
+            </section>
+        </section>
+
+
+
     </section>
 </article>

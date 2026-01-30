@@ -96,9 +96,10 @@
 
 .doc-ul{
     margin:8px 0 0;
-    padding-left:18px;
+    padding-left:24px;
     color:rgba(255,255,255,.72);
     line-height:1.75;
+    list-style: disc;
 }
 
 .kbd{
@@ -544,4 +545,8 @@
 
 #controls .doc-p {
     margin-left: 16px;
+}
+
+.doc-ul-pad{
+    margin-left:24px;
 }
