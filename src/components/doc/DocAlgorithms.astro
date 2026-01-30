@@ -56,8 +56,12 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Se anima por niveles y muestra el orden de visita en el panel de información.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se anima por niveles.</li>
+                    <li>· Muestra el orden de visita en el panel de información.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -79,8 +83,12 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Utiliza animación rápida y muestra el recorrido completo seguido por el algoritmo.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se anima arista por arista.</li>
+                    <li>· Muestra el orden de visita en el panel de información.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -101,8 +109,13 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Animación rápida con resaltado de aristas relajadas y distancias finales por vértice.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se pide el nodo destino, se puede seleccionar también todos.</li>
+                    <li>· Muestra el camino (o caminos) de la forma V<sub>1</sub> → V<sub>2</sub> → … → V<sub>n</sub>.</li>
+                    <li>· También muestra el peso de cada camino.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -123,19 +136,25 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Animación rápida y aviso visual si se detectan ciclos negativos.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se pide el nodo destino, se puede seleccionar también todos.</li>
+                    <li>· Muestra el camino (o caminos) de la forma V<sub>1</sub> → V<sub>2</sub> → … → V<sub>n</sub>.</li>
+                    <li>· También muestra el peso de cada camino.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
                 <h4 class="doc-h4">Kruskal</h4>
                 <p class="doc-p">
-                    El algoritmo de Kruskal construye un árbol de expansión máxima o mínima seleccionando aristas de menor o mayor peso
-                    y añadiéndolas siempre que no formen ciclos.
+                    El algoritmo de Kruskal construye un árbol de expansión mínima o máxima seleccionando aristas
+                    de menor o mayor peso y añadiéndolas siempre que no formen ciclos.
                 </p>
                 <p class="doc-p">
-                    Permite conectar todos los vértices maximizando o minimizando el coste total y es especialmente adecuado para
-                    grafos no dirigidos.
+                    Puede aplicarse a grafos incluso si no son conexos. En ese caso,
+                    el resultado es un bosque de expansión, con un árbol por cada componente conexa, optimizando
+                    el coste total en cada una de ellas.
                 </p>
 
                 <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
@@ -145,8 +164,12 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Se muestran progresivamente las aristas que forman el árbol de expansión mínima.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se da a elegir entre árbol maximal o minimal.</li>
+                    <li>· Se pintan todas las aristas del árbol resultante.</li>
+                    <li>· Muestra el peso total del árbol (o bosque) en el panel de información.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -171,12 +194,17 @@
                 <ul class="doc-ul">
                     <li>· Grafo ponderado</li>
                     <li>· Grafo no dirigido</li>
-                    <li>· Al dos vértices y una arista</li>
+                    <li>· Al menos dos vértices y una arista</li>
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Resalta visualmente los pares emparejados resultantes.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se da a elegir entre peso máximo o mínimo.</li>
+                    <li>· Se pintan las aristas resultantes.</li>
+                    <li>· Muestra la cardinalidad y peso total del acoplamiento.</li>
+                    <li>· También da información de las aristas escogidas.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -197,8 +225,11 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Animación rápida del recorrido euleriano completo.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Si es un ciclo euleriano la animación muestra el camino euleriano cerrado.</li>
+                    <li>· En el panel de información se muestra la ruta completa.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -220,8 +251,12 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Añade aristas auxiliares si es necesario y muestra el recorrido final.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Muestra la animación del ciclo euleriano resultante.</li>
+                    <li>· Las aristas auxiliares se pintan de verde.</li>
+                    <li>· En el panel de información se muestra la ruta completa.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -243,20 +278,34 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Visualiza los caminos aumentantes y el flujo resultante.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo fuente.</li>
+                    <li>· Se pide el nodo sumidero.</li>
+                    <li>· Se muestra una animación camino por camino de flujo.</li>
+                    <li>· En el panel se muestra el flujo máximo de la red.</li>
+                    <li>· También se muestra capacidad y flujo arista por arista.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
                 <h4 class="doc-h4">Hamilton (bajo peso)</h4>
                 <p class="doc-p">
-                    Este algoritmo aplica una heurística para buscar un camino hamiltoniano priorizando aristas de
-                    menor peso.
+                    Este algoritmo busca un ciclo hamiltoniano de bajo peso mediante heurísticas (por ende puede fallar), priorizando
+                    aristas de menor coste sin garantizar una solución óptima global.
                 </p>
                 <p class="doc-p">
-                    No garantiza la solución óptima, pero reduce significativamente el coste computacional en grafos
-                    de mayor tamaño.
+                    En MadnessMad se ofrecen dos estrategias: un enfoque <strong>voraz (Greedy)</strong>, que avanza
+                    eligiendo localmente la mejor arista disponible, y un enfoque basado en
+                    <strong>árbol de expansión mínima (MST)</strong>, que utiliza la estructura del árbol para guiar
+                    la construcción del ciclo.
                 </p>
+                <p class="doc-p">
+                    Ambos métodos reducen significativamente el coste computacional frente a la búsqueda exhaustiva,
+                    siendo adecuados para grafos de mayor tamaño cuando se desea una solución razonable en tiempo
+                    práctico.
+                </p>
+
 
                 <p class="doc-p"><strong>Requisitos de ejecución</strong></p>
                 <ul class="doc-ul">
@@ -266,8 +315,13 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Muestra una solución aproximada obtenida mediante heurística.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se da a elegir entre ejecución "Greedy" y "MST-based".</li>
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se muestra una animación para el camino hamiltoniano (si se encuentra).</li>
+                    <li>· En el panel se muestra el peso total y la ruta del camino.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -289,8 +343,12 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Calcula y muestra la solución óptima exacta.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se pide el nodo de origen.</li>
+                    <li>· Se muestra una animación para el camino hamiltoniano.</li>
+                    <li>· En el panel se muestra el peso total y la ruta del camino.</li>
+                </ul>
             </section>
 
             <section class="doc-algorithm-card">
@@ -308,8 +366,10 @@
                 </ul>
                 <p class="doc-p">
                     <strong>Ejecución en MadnessMad</strong><br>
-                    Resalta puntos de articulación y aristas críticas del grafo.
                 </p>
+                <ul class="doc-ul">
+                    <li>· Se muestran pintadas las aristas y vértices de corte.</li>
+                </ul>
             </section>
         </section>
 
